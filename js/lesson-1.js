@@ -171,7 +171,7 @@
 
 // function isAdult(age) {
 //     if (age<18) {return confirm('Це повідомлення є необовязковим парметром методу confirm() Але підтвердіть чи Вам виповнилось 18 років')}
-//     return age >=18 
+//     return age >=18
 // }
 // console.log(isAdult(17))
 // console.log(isAdult(18))
@@ -180,5 +180,28 @@
 
 
 
+// Завдання 10:
+
+// Напишіть функцію fizzBuzz(num), яка приймає число і перевіряє кожне число від 1 до num:
+// Якщо число ділитися  без остачі на 3 - виводить в консоль 'fizz',
+// якщо ділиться  без остачі на 5 - виводить в консоль 'buzz',
+// якщо ділиться  без остачі і на 3, і на 5 - виводить в консоль 'fizzbuzz'.
+
+// function fizzBuzz(num) {
+//     if (num >= 1) {
+//         for (let i = 1; i <= num; i++) {
+//             if (i % 3 === 0) console.log('fizz');
+//             if (i % 5 === 0) console.log('buzz');
+//             if (i % 3 === 0 && i % 5 === 0) console.log('fizzbuzz');
+//         }
+//     } else {
+//         for (let i = 1; i >= num; i--) {
+//             if (i % 3 === 0) console.log('fizz');
+//             if (i % 5 === 0) console.log('buzz');
+//             if (i % 3 === 0 && i % 5 === 0) console.log('fizzbuzz');
+//         }
+//     }
+// }
+// console.log(fizzBuzz(-15))
 
 
