@@ -152,8 +152,14 @@
 // повертати з функції рядок - 'Not a number!'.
 
 // function foo(num1, num2) {
-//     if (typeof num1 !== 'number' || typeof num2 !== 'number') { return 'Not a number!' }
+//     if (typeof num1 !== 'number' || typeof num2 !== 'number') { return 'Not a numbers!' }
 //    return num1 < num2 ? num1 : num2
+// }
+// console.log(foo(-778, '-8888'));
+
+// function foo(num1, num2) {
+//     if (!Number.isFinite(num1) || !Number.isFinite(num2)) { return 'Not a numbers!' }
+//     return num1 < num2 ? num1 : num2
 // }
 // console.log(foo(-778, '-8888'));
 
