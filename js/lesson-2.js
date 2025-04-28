@@ -95,26 +95,26 @@
 
 
 
+//===================================================================================================
+//  Завдання 5
+// Напишіть функцію findSmallestNumber(numbers),
+// яка шукає найменше число в масиві.
+// Додайте перевірку, що функція отримує саме масив, і 
+// якщо функція отримує масив - поверніть з функції найменше число,
+// в іншому випадку - поверніть 'Sory, it is not an array!'.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// const numbers = [2, 5, 35, 56, 12, 24, 7, 80, 3, '-78', -78];
+// console.log(numbers.indexOf(Math.min(...numbers))); // 10
+// function findSmallestNumber(numbers) {
+//     return Array.isArray(numbers) ? Math.min(...numbers) : 'Sory, it is not an array!'
+//     // if (Array.isArray(numbers)) {
+//     //     for (let item of numbers) {
+//     //         if (!Number.isFinite(item)) return `${item} is not a number`
+//     //     } return Math.min(...numbers)
+//     // } else return 'Sory, it is not an array!'
+// }
+// console.log(findSmallestNumber(numbers))
 
 
 
