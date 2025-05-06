@@ -274,6 +274,8 @@
 //     { name: "Банан", price: 125, quantity: 3 },
 // ];
 
+
+// через forEach
 // const calcTotalPrice = function (fruits, fruitName) {
 //     let total = 0
 //     fruits.forEach(i => {
@@ -287,7 +289,7 @@
 
 
 
-
+// циклом for ... of
 // const calcTotalPrice = function (fruits, fruitName) {
 //     let total = 0
 //     for (i of fruits) {
