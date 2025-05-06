@@ -99,7 +99,7 @@
 //  Завдання 5
 // Напишіть функцію findSmallestNumber(numbers),
 // яка шукає найменше число в масиві.
-// Додайте перевірку, що функція отримує саме масив, і 
+// Додайте перевірку, що функція отримує саме масив, і
 // якщо функція отримує масив - поверніть з функції найменше число,
 // в іншому випадку - поверніть 'Sory, it is not an array!'.
 
@@ -115,6 +115,190 @@
 //     // } else return 'Sory, it is not an array!'
 // }
 // console.log(findSmallestNumber(numbers))
+
+
+//===================================================================================================
+//  Завдання 6:
+
+// Напишіть функцію findLongestWord(string), яка
+// приймає довільний рядок, що складається лише зі слів, розділених
+// пробілами (параметр string), і повертатиме найдовше слово у реченні.
+
+// Скористайтесь цим прикладом виклику функції для перевірки її роботи:
+// console.log(findLongestWord("London is the capital of Great Britain")); // 'capital'
+
+// const findLongestWord = function (string) {
+//     const arr = string.split(' ')
+//     console.log(arr);
+//     let longest=''
+//     for (let i = 0; i < arr.length; i++){
+//         if(arr[i].length>longest.length) longest=arr[i]
+//     }
+//     return longest
+
+// }
+
+// console.log(findLongestWord("London is the capital of Great Britain")); // 'capital'
+
+
+
+
+//===================================================================================================
+//  Завдання 7:
+
+// Напишіть скрипт, який для об'єкту user, послідовно:
+// 1 - додасть поле mood зі значенням 'happy',
+// 2 - замінить hobby на 'skydiving',
+// 3 - замінить значення premium на false,
+// 4 - виведе зміст об'єкта user у форматі
+// '<ключ>:<значення>' використовуя Object.keys() та for...of
+
+// const user = {
+//     name: "John",
+//     age: 20,
+//     hobby: "tenis",
+//     premium: true,
+// };
+
+// function foo() {
+//     user.mood = 'happy'
+//     user.hobby = 'skydiving'
+//     user.premium = false
+//     keys = Object.keys(user)
+//     for (let item of keys) {
+//         console.log(`${item} : ${user[item]}`);
+//     }
+// }
+
+// ЧЕРЕЗ for ... in
+// function foo() {
+//     user.mood = 'happy'
+//     user.hobby = 'skydiving'
+//     user.premium = false
+//     // keys = Object.keys(user)
+//     for (let key in user) {
+//         console.log(`${key} : ${user[key]}`);
+//     }
+// }
+
+// foo()
+
+
+
+
+//===================================================================================================
+//  Завдання 8:
+
+// Є об'єкт, в якому зберігаються зарплати команди
+// Напишіть код для додавання усіх зарплат та
+// збережіть його результат в змінній sum.
+// Якщо об'єкт salaries пустий, то результат має бути 0
+
+// const salaries = {
+//     Mango: 100,
+//     Poly: 160,
+//     Ajax: 1470,
+// };
+// function foo(obj) {
+//     if (Object.keys(obj).length !== 0) {
+//         let sum = 0
+//         for (const key in obj) {
+//             sum += obj[key]
+//         }
+//         return sum
+//     }
+//     return 0
+// }
+// console.log(foo(salaries))
+
+
+//===================================================================================================
+//  Завдання 9:
+
+
+// Створіть об'єкт calculator з наступними методами:
+// read(a, b) - приймає два аргумента і зберігає їх як властивості об'єкта,
+// sum() - повертає сумму збереженних значень (з перевіркою на наявність властивостей в об'єкті),
+// mult() - перемножає збереженні значення і повертає результат (з перевіркою на наявність властивостей в об'єкті),
+// винесіть перевірку на наявність властивостей в об'єкті в окремий метод exist().
+
+// Якщо вказані властивості в обʼєкті відсутні (тобто метод exist повертає false),
+// методи sum і mult мають повертати рядок 'No such propeties'
+
+// const calculator = {
+//     read(a, b) {
+//         this.a = a,
+//         this.b = b
+//     },
+//     sum() {
+//         if (!this.exist()) {
+//             return 'No such propeties'
+//         }
+//         return this.a + this.b
+//     },
+//     mult() {
+//         if (!this.exist()) {
+//             return 'No such propeties'
+//         }
+//         return this.a * this.b
+//     },
+//     exist() {
+//         return this.a != null && this.b != null
+//     }
+
+// }
+// calculator.read(5,10)
+// console.log(calculator.sum());
+// console.log(calculator.mult());
+
+
+
+
+//===================================================================================================
+//  Завдання 10:
+
+// Напишіть функцію calcTotalPrice(fruits, fruitName),
+// яка приймає массив об'єктів (fruits) і рядок з назвою фрукта (fruitName).
+// Функція рахує і повертає загальну вартість фрукта
+// з таким ім'ям, ціною та кількістю з об'єкта.
+
+// Зверніть увагу, що в масиві може бути кілька обʼєктів з однаковою
+// назвою фрукта, це також треба урахувати.
+
+// const fruits = [
+//     { name: "Яблуко", price: 45, quantity: 7 },
+//     { name: "Апельсин", price: 60, quantity: 4 },
+//     { name: "Банан", price: 125, quantity: 8 },
+//     { name: "Груша", price: 350, quantity: 2 },
+//     { name: "Виноград", price: 440, quantity: 3 },
+//     { name: "Банан", price: 125, quantity: 3 },
+// ];
+
+// const calcTotalPrice = function (fruits, fruitName) {
+//     let total = 0
+//     fruits.forEach(i => {
+//         if (i.name == fruitName) {
+//             total += i.price * i.quantity
+//         }
+//     });
+//     return total
+// }
+// console.log(calcTotalPrice(fruits, 'Виноград'));
+
+
+
+
+// const calcTotalPrice = function (fruits, fruitName) {
+//     let total = 0
+//     for (i of fruits) {
+//         if (i.name === fruitName) {
+//             total += i.price * i.quantity
+//         }
+//     }
+//     return total
+// }
+// console.log(calcTotalPrice(fruits, 'Банан'));
+
 
 
 
