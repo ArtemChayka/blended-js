@@ -104,12 +104,12 @@
 // в іншому випадку - поверніть 'Sory, it is not an array!'.
 
 
-const numbers = [2, 5, 35, 56, 12, 24, 7, 80, 3, '-78', -78];
-// console.log(numbers.indexOf(Math.min(...numbers))); // 10
-function findSmallestNumber(numbers) {
-    return Array.isArray(numbers) ? Math.min(...numbers) : 'Sory, it is not an array!'
-}
-console.log(findSmallestNumber(numbers))
+// const numbers = [2, 5, 35, 56, 12, 24, 7, 80, 3, '-78', -78];
+// // console.log(numbers.indexOf(Math.min(...numbers))); // 10
+// function findSmallestNumber(numbers) {
+//     return Array.isArray(numbers) ? Math.min(...numbers) : 'Sory, it is not an array!'
+// }
+// console.log(findSmallestNumber(numbers))
 
 
 //===================================================================================================
@@ -295,7 +295,6 @@ console.log(findSmallestNumber(numbers))
 //     return total
 // }
 // console.log(calcTotalPrice(fruits, 'Банан'));
-
 
 
 
