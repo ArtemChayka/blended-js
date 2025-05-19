@@ -133,7 +133,7 @@
 // Завдання 11:
 
 // Розроби клас Calculator, який дозволяє виконувати арифметичні
-//  операції над числом за допомогою методів класу, підтримуючи
+// операції над числом за допомогою методів класу, підтримуючи
 // ланцюжковий виклик (method chaining).
 //
 // Вимоги до класу Calculator
@@ -160,6 +160,7 @@
 // class Calculator {
 //     constructor(value) {
 //         this.value = value
+//         return this
 //     }
 //     number(value) {
 //         this.value = value
@@ -168,7 +169,6 @@
 //     add(n) {
 //         this.value = this.value + n
 //         return this
-
 //     }
 //     minus(n) {
 //         this.value = this.value - n
@@ -176,12 +176,12 @@
 //     }
 //     multiply(n) {
 //         this.value = this.value * n
-//         return this
+//         // return this               // метод має повертати ОБЄКТ this щоб наступний метод міг взяти з нього value; якщо небуде return то наступний метод буде працювати з undefined
 //     }
 //     devide(n) {
 //         if (this.value == 0) console.log('неможливість ділення');
 //         this.value = this.value / n
-//         return this
+//         // return this              // метод має повертати ОБЄКТ this
 //     }
 
 //     getResult() {
@@ -189,15 +189,25 @@
 //     }
 // }
 // Приклад використання:
-// const calc = new Calculator();
+// const calc = new Calculator(10); // ПЕРЕДАЄМО арг в парметр constructor
+// console.log(calc);
+
+
 // const result = calc
-//     .number(115)            // Встановлюємо початкове значення 10
-//     .add(5)                // Додаємо 5 (10 + 5 = 15)
-//     .minus(75)          // Віднімаємо 3 (15 - 3 = 12)
-//     .multiply(4)           // Множимо на 4 (12 * 4 = 48)
-//     .devide(2)             // Ділимо на 2 (48 / 2 = 24)
-//     .getResult()           // Отримуємо результат: 24
-// console.log(result);          // 2004
+// .number(10)             // Встановлюємо (ПЕРЕІНІЦІАЛІЗОВУЄМО) початкове значення 10
+// .add(5)                 // Додаємо 5 (10 + 5 = 15)
+// .minus(3)               // Віднімаємо 3 (15 - 3 = 12)
+// .multiply(4)            // Множимо на 4 (12 * 4 = 48)
+// .devide(2)              // Ділимо на 2 (48 / 2 = 24)
+// .getResult()            // Отримуємо результат: 24
+// console.log(result);
+
+// console.log(calc.number(10));
+// console.log(calc.add(5));
+// console.log(calc.minus(3));
+// console.log(calc.multiply(4));
+// console.log(calc.devide(2));
+// console.log(calc.getResult());
 
 
 //===================================================================================================
