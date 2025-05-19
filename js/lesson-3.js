@@ -157,30 +157,47 @@
 
 // Об'єкт класу може проводити послідовні операції у вигляді ланцюжка
 
-
-
 // class Calculator {
+//     constructor(value) {
+//         this.value = value
+//     }
 //     number(value) {
-
+//         this.value = value
 //         return this
 //     }
+//     add(n) {
+//         this.value = this.value + n
+//         return this
+
+//     }
+//     minus(n) {
+//         this.value = this.value - n
+//         return this
+//     }
+//     multiply(n) {
+//         this.value = this.value * n
+//         return this
+//     }
+//     devide(n) {
+//         if (this.value == 0) console.log('неможливість ділення');
+//         this.value = this.value / n
+//         return this
+//     }
+
+//     getResult() {
+//         return this.value
+//     }
 // }
-
-
 // Приклад використання:
 // const calc = new Calculator();
-
-
 // const result = calc
-//   .number(10)   // Встановлюємо початкове значення 10
-//   .add(5)       // Додаємо 5 (10 + 5 = 15)
-//   .subtract(3)  // Віднімаємо 3 (15 - 3 = 12)
-//   .multiply(4)  // Множимо на 4 (12 * 4 = 48)
-//   .divide(2)    // Ділимо на 2 (48 / 2 = 24)
-//   .getResult(); // Отримуємо результат: 24
-
-
-//   console.log(result); // 24
+//     .number(115)            // Встановлюємо початкове значення 10
+//     .add(5)                // Додаємо 5 (10 + 5 = 15)
+//     .minus(75)          // Віднімаємо 3 (15 - 3 = 12)
+//     .multiply(4)           // Множимо на 4 (12 * 4 = 48)
+//     .devide(2)             // Ділимо на 2 (48 / 2 = 24)
+//     .getResult()           // Отримуємо результат: 24
+// console.log(result);          // 2004
 
 
 //===================================================================================================
@@ -275,7 +292,7 @@
 // console.log(artem);
 // console.log(artem.getDetails());
 
-// const katya = new Employee({ salary: 340, department: 'Furnitur', lastName: 'Porokhivnyk', city: 'Vyshneve' }, 'wife') // super наслідує всі КЛЮЧІ від БАТЬКівського constructor() 
+// const katya = new Employee({ salary: 340, department: 'Furnitur', lastName: 'Porokhivnyk', city: 'Vyshneve' }, 'wife') // super наслідує всі КЛЮЧІ від БАТЬКівського constructor()
 // console.log(katya);
 // console.log(katya.getEmployeeDetails());
 
