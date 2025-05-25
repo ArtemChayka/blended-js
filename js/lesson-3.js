@@ -157,40 +157,40 @@
 
 // Об'єкт класу може проводити послідовні операції у вигляді ланцюжка
 
-class Calculator {
-    constructor(value) {
-        this.value = value
-        return this
-    }
-    number(value) {
-        this.value = value
-        return this
-    }
-    add(n) {
-        this.value = this.value + n
-        return this
-    }
-    minus(n) {
-        this.value = this.value - n
-        return this
-    }
-    multiply(n) {
-        this.value = this.value * n
-        // return this               // метод має повертати ОБЄКТ this щоб наступний метод міг взяти з нього value; якщо небуде return то наступний метод буде працювати з undefined
-    }
-    devide(n) {
-        if (this.value == 0) console.log('неможливість ділення');
-        this.value = this.value / n
-        return this              // метод має повертати ОБЄКТ this
-    }
+// class Calculator {
+//     constructor(value) {
+//         this.value = value
+//         return this
+//     }
+//     number(value) {
+//         this.value = value
+//         return this
+//     }
+//     add(n) {
+//         this.value = this.value + n
+//         return this
+//     }
+//     minus(n) {
+//         this.value = this.value - n
+//         return this
+//     }
+//     multiply(n) {
+//         this.value = this.value * n
+//         // return this               // метод має повертати ОБЄКТ this щоб наступний метод міг взяти з нього value; якщо небуде return то наступний метод буде працювати з undefined
+//     }
+//     devide(n) {
+//         if (this.value == 0) console.log('неможливість ділення');
+//         this.value = this.value / n
+//         return this              // метод має повертати ОБЄКТ this
+//     }
 
-    getResult() {
-        return this.value
-    }
-}
-// Приклад використання:
-const calc = new Calculator(10); // ПЕРЕДАЄМО арг в парметр constructor
-console.log(calc);
+//     getResult() {
+//         return this.value
+//     }
+// }
+// // Приклад використання:
+// const calc = new Calculator(10); // ПЕРЕДАЄМО арг в парметр constructor
+// console.log(calc);
 
 
 // const result = calc
@@ -202,13 +202,13 @@ console.log(calc);
 // .getResult()            // Отримуємо результат: 24
 // console.log(result);
 
-console.log(calc.number(10));
-console.log(calc.add(5));
-console.log(calc.minus(3));
-console.log(calc.multiply(4)); // undefined БО НЕМА return
-console.log(calc);             // Calculator {value: 48}  // В ОБЄКТІ value зміниться на 48 АЛЕ 
-console.log(calc.devide(2));   // УВАГА на 179 рядок; ФУНКЦІЯ поверне undefined і ЛАНЦЮЖОК МЕТОДІВ припиниться бо неможливо виконати наступний метод з undefined.devide(2) хоча В ОБЄКТІ value зміниться
-console.log(calc.getResult());
+// console.log(calc.number(10));
+// console.log(calc.add(5));
+// console.log(calc.minus(3));
+// console.log(calc.multiply(4)); // undefined БО НЕМА return
+// console.log(calc);             // Calculator {value: 48}  // В ОБЄКТІ value зміниться на 48 АЛЕ 
+// console.log(calc.devide(2));   // УВАГА на 179 рядок; ФУНКЦІЯ поверне undefined і ЛАНЦЮЖОК МЕТОДІВ припиниться бо неможливо виконати наступний метод з undefined.devide(2) хоча В ОБЄКТІ value зміниться
+// console.log(calc.getResult());
 
 
 //===================================================================================================
