@@ -33,7 +33,7 @@ const title = document.querySelector('#title')
 const list = document.querySelector('.list')
  console.log(list);
 // 4
-const El = document.querySelectorAll('[data-topic]')
+const El = [...document.querySelectorAll('[data-topic]')]
  console.log(El);
 // 5
 const elFirst = El[0]
@@ -47,15 +47,15 @@ console.log(elLast);
  console.log(title.nextSibling);
 console.log(title.nextElementSibling);
 // 8
-const subtitle = document.querySelectorAll('h3')
+const subtitle = [...document.querySelectorAll('h3')]
 console.log(subtitle);
 console.log(subtitle[0]);
 console.log(subtitle[1]);
 console.log(subtitle[2]);
 console.log(subtitle[3]);
-console.log([...subtitle]);
+console.log([subtitle]);
 // 9
-[...subtitle].forEach(i => {
+subtitle.forEach(i => {
     i.classList.add('active')
     console.log(i);
 })
@@ -70,23 +70,22 @@ console.log(navigationEl.lastElementChild);
 console.log(navigationEl.firstElementChild);
 // 13, 14
 const currentTopic = "manipulation"
-for (const item of [...El]) {
-    if (item.dataset.topic === currentTopic) {
-        console.log(item)
-        item.style.backgroundColor = 'blue'
-    };
-}
+El.forEach(i => {
+    console.log(i);
+    if (i.dataset.topic === currentTopic) 
+        i.style.backgroundColor = 'blue'
+})
+
 // 15
-for (let i of [...subtitle]) {
+subtitle.forEach(i => {
     if (i.classList.contains('completed')) console.log(i);
-}
+})
 
 // 16
-for (let i of [...El]) {
-    if (i.firstElementChild.classList.contains('completed')) {
-        i.remove()
-    }
-}
+El.forEach(i => {
+    if (i.firstElementChild.classList.contains('completed')) i.remove()
+})
+
 // 17
 const p = document.createElement('p')
 p.textContent = "Об'єктна модель документа (Document Object Model)"
@@ -104,12 +103,12 @@ const itemText = document.createElement('p')
 list.insertAdjacentHTML('beforeend', `<li><h3>Властивість innerHTML</h3><p>Ще один спосіб створити DOM-елементи і помістити їх в дерево - це використовувати рядки з тегами і дозволити браузеру зробити всю важку роботу</p></li>`)
 
 // 20
-const itemArr = document.querySelectorAll('li')
-console.log(itemArr);
-for (let i of [...itemArr]) {
-    console.log(i.remove());
-}
+const liItem = [...document.querySelectorAll('li')]
+console.log(liItem);
+console.log(El);    // список li відрізняється (містить раніше видалений li)
 
+
+liItem.forEach(i => i.remove())
 
 
 
