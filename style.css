@@ -42,6 +42,9 @@
     margin-bottom: 100px;
   }
   
+  .active{
+    color: red;
+  }
   
   .container {
     width: 1440px;

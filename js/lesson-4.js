@@ -1,4 +1,7 @@
+// =========================================================================================================
 // Завдання 1:
+
+// const { createElement } = require("react")
 
 // 1 - отримай body елемент і виведи його в консоль;
 // 2 - отримай елемент id="title" і виведи його в консоль;
@@ -20,8 +23,98 @@
 // 18 - додай новий елемент списку у кінець списка, його заголовок це - "Властивість innerHTML" а опис (р) - "Ще один спосіб створити DOM-елементи і помістити їх в дерево - це використовувати рядки з тегами і дозволити браузеру зробити всю важку роботу". тобто, потрібно створити елемент LI потім наповнити H3 та P і готову LI закинути у кінець списку
 // 19 - зроби це саме, але використовуй шаблонні рядки та метод insertAdjacentHTML()
 // 20 - очисти список
+// 1
+const body = document.querySelector('body')
+ console.log(body);
+// 2
+const title = document.querySelector('#title')
+ console.log(title);
+// 3
+const list = document.querySelector('.list')
+ console.log(list);
+// 4
+const El = document.querySelectorAll('[data-topic]')
+ console.log(El);
+// 5
+const elFirst = El[0]
+ console.log(elFirst);
+// 6
+const elLast = El[El.length - 1]
+console.log(elLast);
+// 7
+ console.log(title.previousSibling);
+ console.log(title.previousElementSibling);
+ console.log(title.nextSibling);
+console.log(title.nextElementSibling);
+// 8
+const subtitle = document.querySelectorAll('h3')
+console.log(subtitle);
+console.log(subtitle[0]);
+console.log(subtitle[1]);
+console.log(subtitle[2]);
+console.log(subtitle[3]);
+console.log([...subtitle]);
+// 9
+[...subtitle].forEach(i => {
+    i.classList.add('active')
+    console.log(i);
+})
+// 10
+const navigationEl = document.querySelector('[data-topic="navigation"]');
+console.log(navigationEl);
+// 11
+navigationEl.style.backgroundColor = 'yellow'
+// 12
+navigationEl.lastElementChild.textContent = "Я змінив тут текст!"
+console.log(navigationEl.lastElementChild);
+console.log(navigationEl.firstElementChild);
+// 13, 14
+const currentTopic = "manipulation"
+for (const item of [...El]) {
+    if (item.dataset.topic === currentTopic) {
+        console.log(item)
+        item.style.backgroundColor = 'blue'
+    };
+}
+// 15
+for (let i of [...subtitle]) {
+    if (i.classList.contains('completed')) console.log(i);
+}
+
+// 16
+for (let i of [...El]) {
+    if (i.firstElementChild.classList.contains('completed')) {
+        i.remove()
+    }
+}
+// 17
+const p = document.createElement('p')
+p.textContent = "Об'єктна модель документа (Document Object Model)"
+title.insertAdjacentElement('afterend', p)
+// 18
+const listItem = document.createElement('li')
+const itemTitle = document.createElement('h3')
+const itemText = document.createElement('p')
+// itemTitle.textContent = "Властивість innerHTML"
+// itemText.textContent = "Ще один спосіб створити DOM-елементи і помістити їх в дерево - це використовувати рядки з тегами і дозволити браузеру зробити всю важку роботу"
+// listItem.append(itemTitle, itemText)
+// list.append(listItem)
+
+// 19
+list.insertAdjacentHTML('beforeend', `<li><h3>Властивість innerHTML</h3><p>Ще один спосіб створити DOM-елементи і помістити їх в дерево - це використовувати рядки з тегами і дозволити браузеру зробити всю важку роботу</p></li>`)
+
+// 20
+const itemArr = document.querySelectorAll('li')
+console.log(itemArr);
+for (let i of [...itemArr]) {
+    console.log(i.remove());
+}
 
 
+
+
+
+// =========================================================================================================
 // Завдання 2:
 
 // Створіть контейнер div (з класом number-container) в HTML-документі
@@ -30,9 +123,28 @@
 // Парні числа повинні мати зелений фон (додати клас even),
 // Непарні числа - жовтий фон (додати клас odd).
 
+// const container = document.createElement('div')
+// container.classList.add('number-container')
+// const frag = document.createDocumentFragment()
 // const randomNumber = () => Math.floor(Math.random() * 100) + 1;
+// const list = document.querySelector('.list')
+// const p = document.createElement('p')
+// p.classList.add('task-title')
+// p.textContent = 'Task 2'
 
-console.clear()
+// for (let i = 0; i < 100; i++) {
+//     const block = document.createElement('div')
+//     block.classList.add('number')
+//     block.append(randomNumber())
+//     block.textContent % 2 === 0 ? block.classList.add('even') : block.classList.add('odd')
+//     frag.appendChild(block)
+// }
+// container.append(frag)
+// list.insertAdjacentElement('afterend', container)
+// container.insertAdjacentElement('beforebegin', p)
+
+
+
 // =========================================================================================================
 // Завдання 3:
 
@@ -64,50 +176,52 @@ console.clear()
 // При відправці форми, очисти інпут, верни чек бокс у положення
 // false, верни дефолтне значення "Anonymous" у span.
 
-const input = document.querySelector('.contact-form-input')
-const checkbox = document.querySelector('.contact-form-checkbox')
-const form = document.querySelector('.contact-form')
-const span = document.querySelector('.js-username-output')
+// const input = document.querySelector('.contact-form-input')
+// const checkbox = document.querySelector('.contact-form-checkbox')
+// const form = document.querySelector('.contact-form')
+// const span = document.querySelector('.js-username-output')
 
-// input
-input.addEventListener('input', (event) => {
-    if (event.target.value.trim().length >= 6) {
-        event.target.classList.add('success')
-        event.target.classList.remove('error')
-    } else {
-        event.target.classList.add('error')
-        event.target.classList.remove('success')
-    }
-    event.target.value.trim() === '' ? span.textContent = "Anonymous" : span.textContent = event.target.value.trim()
-})
+// // input
+// input.addEventListener('input', (event) => {
+//     if (input.value.trim().length >= 6) {       // input === event.target
+//         input.classList.add('success')
+//         input.classList.remove('error')
+//     } else {
+//         input.classList.add('error')
+//         input.classList.remove('success')
+//     }
+//     event.target.value === '' ? span.textContent = 'Anonymous' : span.textContent = input.value
+// })
 
-// focus
-input.addEventListener('focus', (event) => {
-    if (event.target.value.trim() == '') { event.target.style.outline = '3px solid red' }
-    else { event.target.style.outline = '3px solid green' }
-})
+// // focus
+// input.addEventListener('focus', (event) => {
+//     if (input.value.trim() == '') { input.style.outline = '3px solid red' }
+//     else { input.style.outline = '3px solid green' }
+// })
 
-// blur
-input.addEventListener('blur', (event) => {
-    if (event.target.value.trim() == '') { event.target.style.outline = '3px solid red' }
-    else { event.target.style.outline = '3px solid lime' }
-})
+// // blur
+// input.addEventListener('blur', (event) => {
+//     if (input.value.trim() == '') { input.style.outline = '3px solid red' }
+//     else { input.style.outline = '3px solid lime' }
+// })
 
-// submit
-form.addEventListener('submit', (event) => {
-    event.preventDefault()
-    if (input.value.trim() == '' || checkbox.checked == false) {
-        alert('Fields shouldn\'t be empty')
-        return
-    }
-    console.log(event);
-    const obj = {}
-    obj.userName = event.target.elements.userName.value
-    obj.isChecked = event.target.elements.accept.checked
-    console.log(obj);
-    span.textContent = "Anonymous"
-    form.reset()
-})
+// // submit
+// form.addEventListener('submit', (event) => {
+//     event.preventDefault()
+//     if (input.value.trim() == '' || checkbox.checked == false) {
+//         alert('Fields shouldn\'t be empty')
+//         return
+//     }
+//     console.log(event);
+//     console.log(event.target);
+
+//     const obj = {}
+//     obj.userName = form.elements.userName.value     // form === event.target
+//     obj.isChecked = form.elements.accept.checked
+//     console.log(obj);
+//     span.textContent = "Anonymous"
+//     form.reset()
+// })
 
 
 // =========================================================================================================
